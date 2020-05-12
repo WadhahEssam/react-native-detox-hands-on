@@ -49,6 +49,7 @@ const App: () => React$Node = () => {
               alignItems: 'center',
             }}>
             <TouchableOpacity
+              testID="button"
               onPress={() => {
                 setIsHidden(!isHidden);
               }}>
@@ -63,7 +64,7 @@ const App: () => React$Node = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}>
+            }}>
               <View
                 testID="circle"
                 style={{

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-describe('Example', () => {
+describe('Detox Hands On', () => {
   beforeEach(async () => {
     await device.reloadReactNative(); // works just like when you press command + r
   });
@@ -10,11 +10,12 @@ describe('Example', () => {
   });
 
   it('Circle should be hidden', async () => {
-    await expect(element(by.id('circle'))).toBeHidden();
+    await expect(element(by.id('circle'))).toBeNotVisible();
   });
 
-  it('should show world screen after tap', async () => {
-    await element(by.id('world_button')).tap();
-    await expect(element(by.text('World!!!'))).toBeVisible();
+  it('Circle will show after pressing the button', async () => {
+    await expect(element(by.id('circle'))).toBeNotVisible();
+    await element(by.id('button')).tap();
+    await expect(element(by.id('circle'))).toBeVisible();
   });
 });
