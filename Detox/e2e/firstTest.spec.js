@@ -1,15 +1,16 @@
+/* eslint-disable no-undef */
+
 describe('Example', () => {
   beforeEach(async () => {
-    await device.reloadReactNative();
+    await device.reloadReactNative(); // works just like when you press command + r
   });
 
-  it('should have welcome screen', async () => {
-    await expect(element(by.id('welcome'))).toBeVisible();
+  it('Should have a stepOne text', async () => {
+    await expect(element(by.id('stepOne'))).toBeVisible();
   });
 
-  it('should show hello screen after tap', async () => {
-    await element(by.id('hello_button')).tap();
-    await expect(element(by.text('Hello!!!'))).toBeVisible();
+  it('Circle should be hidden', async () => {
+    await expect(element(by.id('circle'))).toBeHidden();
   });
 
   it('should show world screen after tap', async () => {

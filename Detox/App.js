@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -25,6 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
+  const [isHidden, setIsHidden] = useState(true);
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -38,9 +40,46 @@ const App: () => React$Node = () => {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
+          <View
+            style={{
+              height: 100,
+              widht: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                setIsHidden(!isHidden);
+              }}>
+              <Text>Press me</Text>
+            </TouchableOpacity>
+          </View>
+          {!isHidden && (
+            <View
+              style={{
+                height: 100,
+                widht: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <View
+                testID="circle"
+                style={{
+                  height: 100,
+                  width: 100,
+                  borderRadius: 100,
+                  backgroundColor: 'red',
+                }}
+              />
+            </View>
+          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text testID="stepOne" style={styles.sectionTitle}>
+                Step One
+              </Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.

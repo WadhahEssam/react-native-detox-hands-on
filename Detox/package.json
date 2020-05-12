@@ -20,13 +20,9 @@
     "babel-jest": "^26.0.1",
     "detox": "^16.5.0",
     "eslint": "^7.0.0",
-    "jest": "^26.0.1",
     "metro-react-native-babel-preset": "^0.59.0",
     "mocha": "^7.1.2",
     "react-test-renderer": "16.11.0"
-  },
-  "jest": {
-    "preset": "react-native"
   },
   "detox": {
     "configurations": {
