@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "mocha",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "eslint": "^7.0.0",
     "jest": "^26.0.1",
     "metro-react-native-babel-preset": "^0.59.0",
+    "mocha": "^7.1.2",
     "react-test-renderer": "16.11.0"
   },
   "jest": {
@@ -37,6 +38,7 @@
           "type": "iPhone 11"
         }
       }
-    }
+    },
+    "test-runner": "mocha"
   }
 }
